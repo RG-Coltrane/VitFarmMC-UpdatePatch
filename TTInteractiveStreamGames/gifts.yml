@@ -1,0 +1,34 @@
+# Map TikTok gifts (by coin cost) to in-game actions
+# These tiers are the default freestyle behavior when no /ttinteractive game is active.
+# When a game mode is running, that mode's own tier handler overrides these effects.
+# For command mode: these define what /ttinteractive gift <coins> <username> does
+# For webhook mode: matched automatically by gift coin value
+mappings:
+  1:     # Rose, Heart, TikTok (1 coin)
+    action: spawn-mob
+    mob: CHICKEN
+    count: 1
+    message: "&a%user% sent a Tier 1 gift!"
+
+  5:     # Finger Heart, Mic (5 coins)
+    action: give-item
+    item: BREAD
+    count: 3
+    message: "&a%user% sent a Tier 5 gift!"
+
+  99:    # Star, Paper Crane (99 coins)
+    action: spawn-mob
+    mob: ZOMBIE
+    count: 3
+    message: "&e%user% sent a Tier 99 gift!"
+
+  499:   # Money Rain (499+ coins)
+    action: game-event
+    event: tnt-rain
+    count: 10
+    message: "&c&l%user% sent a Tier 499+ gift!"
+
+  999:  # Galaxy (999+ coins)
+    action: game-event
+    event: boss-wave
+    message: "&6&l%user% sent a Tier 999+ gift!"
